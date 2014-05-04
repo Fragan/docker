@@ -5,4 +5,4 @@ echo mdp: root
 #PORT=$(sudo docker port $ID 22)
 PORT=$(sudo docker inspect $ID | grep HostPort | tail -1 | awk '{print $2}' | tr -d '",\n’')
 
-ssh -X root@localhost -p ${PORT} firefox
+ssh -X root@localhost -p ${PORT} firefox -private-window
